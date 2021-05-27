@@ -1,0 +1,312 @@
+@use   './config';
+$blue-gradient: linear-gradient(45deg, #0136af, #22abfa);
+$red-gradient: linear-gradient(45deg, #d62926, #ee625f);
+$green-gradient: linear-gradient(45deg, #11998e, #1ce669);
+$orange-gradient: linear-gradient(45deg, #fc4a1a, #f7b733);
+$black-gradient: linear-gradient(45deg, #111, #666);
+
+#ContainerCard { 
+      width: 100%;
+      height: auto;
+      display: flex; 
+      min-height: 100vh;
+      flex-direction: column;
+      align-items: center; 
+       padding: 10px;
+       justify-content: center;
+      background-color: rgb(255, 254, 254);
+    }
+
+#CardInfos { 
+      padding:  15px 30px ;
+      display: flex;
+      flex-direction: column;
+      -webkit-box-shadow: 2px 3px 11px 4px rgba(0,0,0,0.28); 
+box-shadow: 2px 3px 11px 4px rgba(0,0,0,0.28);
+      width: 100%;
+      height: auto;
+      min-height: 450px;
+      z-index: 10;
+}    
+
+#TitleContainer { 
+     height:auto;
+     min-height: 100px;
+     border-bottom:solid 1px rgb(206, 206, 206);
+     padding: 10px;
+     
+}
+#ProductTitle{
+     margin: 0;
+     font-size: 1.5rem;
+     font-weight: 1000;
+     color: rgb(46, 46, 46);
+     display: flex;
+     align-items: center;
+}
+#New { 
+    margin-left: 10px;
+     font-size: 17px;
+     color: white;
+     background-color: var(--GeralColor);
+     padding: 5px;
+     font-weight: 600;
+    
+     border-radius: 10%;
+}
+
+#ShortDescription { 
+     font-size: 20px;
+     font-weight: 600;
+     color: rgb(56, 56, 56);
+}
+
+#InfoContainer { 
+     height:auto;
+     border-bottom:solid 1px rgb(206, 206, 206);
+     padding: 10px;
+}
+#InfoTitle {
+      margin: 0;
+     font-size: 24px;
+     font-weight: 600;
+     color: rgb(56, 56, 56);}
+
+#InfoDescription { 
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0;
+    color: rgb(78, 78, 78);
+
+}
+
+#ContainerSelectColor {
+    height:auto;
+    border-bottom:solid 1px rgb(206, 206, 206);
+    padding: 10px;
+}
+
+
+#ContainerSelectColorTitle {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(56, 56, 56);
+}
+
+#Selector { 
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+
+.ColorSelector { 
+     height: 25px;
+     width: 25px;
+     border-radius: 100%;
+     margin: 10px;
+     cursor: pointer;
+     &.selected {
+           border: solid 5px rgb(255, 255, 255);
+           -webkit-box-shadow: 2px 3px 11px 4px rgba(0,0,0,0.16); 
+box-shadow: 2px 3px 11px 4px rgba(0,0,0,0.16);
+     }
+}
+
+.ColorSelector[color='blue'] {
+     background-color: blue;
+}
+.ColorSelector[color='green'] {
+      background-color: green;
+}
+.ColorSelector[color='red'] {
+    background-color: red;
+}
+.ColorSelector[color='black'] {
+    background-color: black;
+}
+.ColorSelector[color='orange'] {
+    background-color: orange;
+}
+
+#ContainerSize{ 
+    height:auto;
+    border-bottom:solid 1px rgb(206, 206, 206);
+    padding: 10px;
+}
+#SizeTitle { 
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(56, 56, 56);
+}
+#Sizes {
+    display: flex;
+     margin:4px 0;
+     height: auto;
+}
+
+.SizeSelector {
+    width: 34px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: black;
+    background-color: rgb(194, 194, 194);
+    margin: 5px 10px;
+    border-radius: 10%;
+    cursor: pointer;
+    &.size {
+         background-color: var(--GeralColor);
+         color: white;
+    }
+}
+            
+#BuyContainer { 
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#BuyButton { 
+     
+     padding: 17px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: white;
+     background-color: var(--GeralColor);
+     font-size: 18px;
+     font-weight: 700;
+     cursor: pointer;
+     &:hover{ 
+          transform:  scale(1.1);
+     }
+
+}
+
+#BuyPrice {
+     font-size: 34px;
+     font-weight: 900;
+     color: rgb(43, 43, 43);
+}
+
+
+
+.productIMG { 
+     position: absolute;
+     width: 100%;
+     height: auto;  
+     top: 2%;
+     left: -2%;
+     min-width: 300px; 
+     max-width: 80%;
+     opacity: 0;
+     z-index: -2;
+     transform: rotate(-5deg);
+     transform: translateY(-50);
+
+     &.show{ 
+         z-index: 2;
+         opacity: 1;
+     }
+}
+
+#shareSVG { 
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    top: 2%;
+    cursor: pointer;
+    &:hover{
+         transform: scale(1.1);
+         background-color: rgb(240, 240, 240);
+
+    }
+}
+#shareSVG img { 
+    position: absolute;
+    width: 20px;
+    z-index: 1;
+ }
+ #logo { 
+    position: absolute;
+    width: 60px;
+    left: 3%;
+    top:3%; 
+    z-index: 2;
+ }
+
+ #opacityLogo { 
+    position: absolute;
+    width: 100px;
+    font-size: 100px;
+    left: 10%;
+   color: rgb(0, 0, 0, 0.2);
+    top: 10%;
+    z-index: 2;
+    font-weight: 1000;
+ }
+
+ #ProductView {
+    position: relative;
+    height: auto;
+    min-height: 200px;
+    width: 100% ;
+    
+   
+    -webkit-box-shadow: -5px 3px 11px 4px rgba(0,0,0,0.28); 
+    box-shadow: -5px 3px 11px 4px rgba(0,0,0,0.28);
+ }
+
+ .background { 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      opacity: 0;
+      &.display { 
+           z-index: 1;
+           opacity: 1;
+           animation: widthmoviment 1s  ;
+
+      }
+     
+ }
+ .behind {
+    z-index: 0;
+           opacity: 1;
+}
+ @keyframes widthmoviment {
+     0% {width: 0%;}
+     100% {width: 100%;}
+ }
+ 
+ .background[color='blue'] {
+    background-image: $blue-gradient ;
+}
+.background[color='green'] {
+     background-image: $green-gradient;
+}
+.background[color='red'] {
+   background-image: $red-gradient;
+}
+.background[color='black'] {
+   background-image: $black-gradient;
+}
+.background[color='orange'] {
+   background-image: $orange-gradient;
+}
+
+

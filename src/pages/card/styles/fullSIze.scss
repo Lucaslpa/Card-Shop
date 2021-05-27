@@ -1,0 +1,46 @@
+#ContainerCard {
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+}
+
+#CardInfos { 
+    width: 420px;
+    height: 570px;
+}    
+
+.productIMG { 
+   width: 620px !important;
+    max-width: none; 
+   top: 12%;
+   left: -40%;
+   z-index: -2;
+   transform: rotate(-20deg);
+
+}
+
+#shareSVG { 
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    
+}
+
+#logo { 
+  width: 120px;
+  left: 4%;
+  top:4%; 
+}
+
+#opacityLogo { 
+
+  font-size: 160px;
+  left: 5%;
+  top: 10%;
+ color: rgba(255, 255, 255, 0.2);
+}
+
+#ProductView {
+  height: 470px;
+  width: 450px ;
+}
+

@@ -1,0 +1,460 @@
+:root {
+  --GeralColor: rgb(0, 102, 255) ;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fcfcfc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.App {
+  overflow: hidden;
+}
+
+#ContainerCard {
+  width: 100%;
+  height: auto;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
+  background-color: #fffefe;
+}
+
+#CardInfos {
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 2px 3px 11px 4px rgba(0, 0, 0, 0.28);
+  box-shadow: 2px 3px 11px 4px rgba(0, 0, 0, 0.28);
+  width: 100%;
+  height: auto;
+  min-height: 450px;
+  z-index: 10;
+}
+
+#TitleContainer {
+  height: auto;
+  min-height: 100px;
+  border-bottom: solid 1px #cecece;
+  padding: 10px;
+}
+
+#ProductTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 1000;
+  color: #2e2e2e;
+  display: flex;
+  align-items: center;
+}
+
+#New {
+  margin-left: 10px;
+  font-size: 17px;
+  color: white;
+  background-color: var(--GeralColor);
+  padding: 5px;
+  font-weight: 600;
+  border-radius: 10%;
+}
+
+#ShortDescription {
+  font-size: 20px;
+  font-weight: 600;
+  color: #383838;
+}
+
+#InfoContainer {
+  height: auto;
+  border-bottom: solid 1px #cecece;
+  padding: 10px;
+}
+
+#InfoTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #383838;
+}
+
+#InfoDescription {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+  color: #4e4e4e;
+}
+
+#ContainerSelectColor {
+  height: auto;
+  border-bottom: solid 1px #cecece;
+  padding: 10px;
+}
+
+#ContainerSelectColorTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #383838;
+}
+
+#Selector {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.ColorSelector {
+  height: 25px;
+  width: 25px;
+  border-radius: 100%;
+  margin: 10px;
+  cursor: pointer;
+}
+.ColorSelector.selected {
+  border: solid 5px white;
+  -webkit-box-shadow: 2px 3px 11px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 2px 3px 11px 4px rgba(0, 0, 0, 0.16);
+}
+
+.ColorSelector[color=blue] {
+  background-color: blue;
+}
+
+.ColorSelector[color=green] {
+  background-color: green;
+}
+
+.ColorSelector[color=red] {
+  background-color: red;
+}
+
+.ColorSelector[color=black] {
+  background-color: black;
+}
+
+.ColorSelector[color=orange] {
+  background-color: orange;
+}
+
+#ContainerSize {
+  height: auto;
+  border-bottom: solid 1px #cecece;
+  padding: 10px;
+}
+
+#SizeTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #383838;
+}
+
+#Sizes {
+  display: flex;
+  margin: 4px 0;
+  height: auto;
+}
+
+.SizeSelector {
+  width: 34px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: black;
+  background-color: #c2c2c2;
+  margin: 5px 10px;
+  border-radius: 10%;
+  cursor: pointer;
+}
+.SizeSelector.size {
+  background-color: var(--GeralColor);
+  color: white;
+}
+
+#BuyContainer {
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#BuyButton {
+  padding: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--GeralColor);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#BuyButton:hover {
+  transform: scale(1.1);
+}
+
+#BuyPrice {
+  font-size: 34px;
+  font-weight: 900;
+  color: #2b2b2b;
+}
+
+.productIMG {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 2%;
+  left: -2%;
+  min-width: 300px;
+  max-width: 80%;
+  opacity: 0;
+  z-index: -2;
+  transform: rotate(-5deg);
+  transform: translateY(-50);
+}
+.productIMG.show {
+  z-index: 2;
+  opacity: 1;
+}
+
+#shareSVG {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  background-color: white;
+  border-radius: 100%;
+  top: 2%;
+  cursor: pointer;
+}
+#shareSVG:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+}
+
+#shareSVG img {
+  position: absolute;
+  width: 20px;
+  z-index: 1;
+}
+
+#logo {
+  position: absolute;
+  width: 60px;
+  left: 3%;
+  top: 3%;
+  z-index: 2;
+}
+
+#opacityLogo {
+  position: absolute;
+  width: 100px;
+  font-size: 100px;
+  left: 10%;
+  color: rgba(0, 0, 0, 0.2);
+  top: 10%;
+  z-index: 2;
+  font-weight: 1000;
+}
+
+#ProductView {
+  position: relative;
+  height: auto;
+  min-height: 200px;
+  width: 100%;
+  -webkit-box-shadow: -5px 3px 11px 4px rgba(0, 0, 0, 0.28);
+  box-shadow: -5px 3px 11px 4px rgba(0, 0, 0, 0.28);
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  opacity: 0;
+}
+.background.display {
+  z-index: 1;
+  opacity: 1;
+  animation: widthmoviment 1s;
+}
+
+.behind {
+  z-index: 0;
+  opacity: 1;
+}
+
+@keyframes widthmoviment {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.background[color=blue] {
+  background-image: linear-gradient(45deg, #0136af, #22abfa);
+}
+
+.background[color=green] {
+  background-image: linear-gradient(45deg, #11998e, #1ce669);
+}
+
+.background[color=red] {
+  background-image: linear-gradient(45deg, #d62926, #ee625f);
+}
+
+.background[color=black] {
+  background-image: linear-gradient(45deg, #111, #666);
+}
+
+.background[color=orange] {
+  background-image: linear-gradient(45deg, #fc4a1a, #f7b733);
+}
+
+:root {
+  --GeralColor: rgb(0, 102, 255) ;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fcfcfc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.App {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 520px) {
+  .productIMG {
+    top: none;
+    left: 5%;
+  }
+}
+@media screen and (min-width: 400px) {
+  #ProductView {
+    height: 250px;
+  }
+
+  .productIMG {
+    top: none;
+    left: 8%;
+  }
+}
+@media screen and (min-width: 400px) {
+  #ProductView {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 700px) {
+  #ProductView {
+    height: 430px;
+  }
+}
+@media screen and (min-width: 887px) {
+  #ContainerCard {
+    flex-direction: row;
+    background-color: white;
+  }
+
+  #CardInfos {
+    width: 420px;
+    height: 570px;
+  }
+
+  .productIMG {
+    width: 620px !important;
+    max-width: none;
+    top: 12%;
+    left: -40%;
+    z-index: -2;
+    transform: rotate(-20deg);
+  }
+
+  #shareSVG {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+  }
+
+  #logo {
+    width: 120px;
+    left: 4%;
+    top: 4%;
+  }
+
+  #opacityLogo {
+    font-size: 160px;
+    left: 5%;
+    top: 10%;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  #ProductView {
+    height: 470px;
+    width: 450px;
+  }
+}
+@media screen and (max-width: 360px) {
+  #CardInfos {
+    padding: 15px 5px;
+  }
+
+  #Selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .ColorSelector {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    margin: 7px;
+  }
+}
+@media screen and (max-width: 400px) {
+  #BuyButton {
+    padding: 5px;
+  }
+
+  #BuyPrice {
+    font-size: 20px;
+    font-weight: 900;
+    color: #2b2b2b;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
